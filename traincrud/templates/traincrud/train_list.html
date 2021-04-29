@@ -1,4 +1,25 @@
 {% extends "traincrud/base.html" %} {% block content %}
-<p>hiiii list</p>
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Train name</td>
+            <td>Train No</td>
+            <td>From</td>
+            <td>To</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for train in train_list %}
+        <tr>
+            <td>{{train.TrainName}}</td>
+            <td>{{train.TrainNo}}</td>
+            <td>{{train.Start}}</td>
+            <td>{{train.End}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock content %}

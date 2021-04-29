@@ -1,3 +1,6 @@
-{% extends "traincrud/base.html" %} {% block content %}
-<p> hiii form</p>
+{% extends "traincrud/base.html" %} {% block content %} {% load crispy_forms_tags %}
+<form action="" method="POST" autocomplete="off">
+    {%csrf_token%} {{log|crispy}}
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
 {% endblock content %}
