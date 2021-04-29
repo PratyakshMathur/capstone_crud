@@ -1,6 +1,16 @@
 {% extends "traincrud/base.html" %} {% block content %} {% load crispy_forms_tags %}
 <form action="" method="POST" autocomplete="off">
     {%csrf_token%} {{log|crispy}}
-    <button type="submit" class="btn btn-success">Submit</button>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'train_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> View list
+            </a>
+        </div>
+    </div>
 </form>
 {% endblock content %}
