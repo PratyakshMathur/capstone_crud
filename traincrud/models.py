@@ -18,7 +18,7 @@ class Train(models.Model):
     TrainNo = models.CharField(max_length=14)
     Start = models.ForeignKey(PositionStart,on_delete=models.CASCADE)
     End = models.ForeignKey(PositionEnd,on_delete=models.CASCADE)
-    TrainImage = models.ImageField(null = True, blank = True, upload_to ='images/')
+    TrainImage = models.ImageField(upload_to ='images/')
     dateoflauch =  models.DateField()
     Goods = models.BooleanField(default=False)
     Passenger = models.BooleanField(default=False)

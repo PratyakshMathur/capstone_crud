@@ -12,9 +12,8 @@ class Trainlog(forms.ModelForm):
             'dateoflauch': forms.DateInput(format = ('%y-%m-%d'),attrs={
                 'type':'date',
                 'required':True,
-            
             }),
-            'TrainImage': forms.FileInput(attrs={'required': True}),
+            
 
         }
 

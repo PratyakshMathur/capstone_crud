@@ -17,10 +17,10 @@ def train_log(request, id=0):
         return render(request,"traincrud/train_log.html", {'log':log})
     else:
         if id==0:    
-            log = Trainlog(request.POST)
+            log = Trainlog(request.POST, request.FILES)
         else:
             train = Train.objects.get(pk=id)
-            log=Trainlog(request.POST, instance = train)
+            log=Trainlog(request.POST, request.FILES,  instance = train,)
         if log.is_valid():
             log.save()
             return redirect('/list')
